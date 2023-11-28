@@ -1,0 +1,146 @@
+/* pages/shopDetails/shopDetails.wxss */
+.swip{
+	height: 600rpx;
+}
+.imgs{
+	width: 100%;
+	height: 100%;
+}
+/* .shop__message{
+
+} */
+.share{
+	height: 100rpx;
+}
+.share__img{
+	margin: 10rpx 20rpx;
+	border-radius: 10rpx;
+	border: 1rpx solid rgb(173, 173, 173);
+	float: right;
+	height: 100rpx;
+	width: 100rpx;
+}
+.shop__pri{
+	margin-top: 40rpx;
+	display: flex;
+	justify-content: space-between;
+	height: 80rpx;
+	border-bottom: 1rpx solid rgb(214, 214, 214);
+}
+.shop__pri__left{
+margin-left: 20rpx;
+color: red;
+}
+.shop__pri__num{
+	margin-right: 20rpx;
+}
+.shop__bottom{
+	display: flex;
+	padding-left: 20rpx;
+	height: 80rpx;
+	align-items: center;
+}
+.shop__bottom__left{
+	font-size: 35rpx;
+	color: gray;
+}
+.shop__bottom > icon{
+	margin: 0 20rpx;
+}
+.bigbox{
+	height: 15rpx;
+	background-color: #f5f5f5;
+}
+.shop__phone{
+	display: flex;
+	justify-content: center;
+	padding: 10rpx 20rpx;
+	align-items: center;
+}
+.shop__phone__img{
+	width: 70rpx;
+	height: 70rpx;
+}
+.login{
+	width: 140rpx;
+}
+.weix{
+	margin-left: 20rpx;
+}
+.shop__phone__text{
+	flex: 1;
+	margin-left: 20rpx;
+}
+.goshop{
+	text-align: center;
+}
+.goshop__text{
+	margin: 20rpx auto;
+	display: block;
+	width: 220rpx;
+	line-height: 100rpx;
+	background-color: red;
+	border-radius: 20rpx;
+	color: white;
+}
+.imgbtn{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+.imgbtn__text{
+	margin: 20rpx 10rpx ;
+	display: block;
+	width: 220rpx;
+	line-height: 100rpx;
+	background-color: #009900;
+	border-radius: 20rpx;
+	color: white;
+}
+.shopbigimg{
+	padding: 20rpx;
+	overflow-y:scroll;
+}
+.shopbigimg > image{
+	width: 100%;
+	vertical-align: bottom;
+}
+.bottom{
+	/* width: 100%; */
+	position: fixed;
+	bottom: 0;
+	/* display: flex;
+	height: 140rpx;
+	align-items: center;
+	justify-content: space-between;
+	background-color: white; */
+}
+.bottom > image{
+	width: 70rpx;
+	height: 70rpx;
+	padding: 40rpx;
+}
+.bars{
+	width: 6rpx;
+	height: 100%;
+	background-color: #dcdcdc;
+}
+.test{
+	width: 100%;
+	color: white;
+	height: 130rpx;
+	line-height:130rpx;
+}
+.addshop{
+	width: 50%;
+	display: inline-block;
+	text-align: center;
+	background-color: #2ec234;
+}
+.buy{
+	width: 50%;
+	display: inline-block;
+	line-height:130rpx;
+	text-align: center;
+	background-color: #ff2815;
+}

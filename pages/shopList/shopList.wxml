@@ -1,0 +1,40 @@
+<!--pages/shopList/shopList.wxml-->
+<!-- 搜索栏 -->
+<view class="header">
+	<view class="header__search">
+		<icon type="search"></icon>
+		<input bindinput="getinpval" class="header__search__input" placeholder="请输入关键字" type="text" />
+	</view>
+	<view class="header__search__btn" bind:tap="sendSer">搜索</view>
+</view>
+<!-- tabbar -->
+<view class="tabbar" bindtap="changTab">
+	<view class="{{index == 1 ? 'action':''}} tabbar__item" data-nid="1">综合</view>
+	<view class="{{index == 2 ? 'action':''}} tabbar__item" data-nid="2">销量</view>
+	<view class="{{index == 3 ? 'action':''}} tabbar__item" data-nid="3">新品</view>
+	<view class="{{index == 4 ? 'action':''}} tabbar__item" data-nid="4">价格
+		<view class="tabbar__img">
+			<image wx:if="{{act}}" class="tabbatr__img1" src="../../image/other/sheng1.png" mode="" />
+			<image wx:else class="tabbatr__img1" src="../../image/other/sheng2.png" mode="" />
+			<image wx:if="{{!act}}" class="tabbatr__img2" src="../../image/other/sheng1.png" mode="" />
+			<image  wx:else class="tabbatr__img2" src="../../image/other/sheng2.png" mode="" />
+		</view>
+	</view>
+</view>
+<!-- 商品列表 -->
+<block wx:for="{{shopLists}}" wx:key="id">
+<view class="shoplists" bind:tap="goShopmsg"  data-sid="{{item.commodity_id}}">
+	<image class="shoplists__img" src="{{imgBaseUrl}}{{item.picture_url}}" alt="" />
+	<view class="shoplists__content">
+		<view class="shoplists__content__title">{{item.commodity_name}}</view>
+		<view class="shoplists__content__chent">
+			<view class="shoplists__content__chent__pir">￥{{item.commodity_price}}</view>
+			<view class="shoplists__content__chent__num">销量:{{item.commodity_sales}}</view>
+		</view>
+	</view>
+</view>
+</block>
+<view class="loading" wx:if="{{loding}}">
+	<van-loading type="spinner" />
+	<text>加载中</text>
+</view>

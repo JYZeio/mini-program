@@ -1,0 +1,39 @@
+<!--pages/mine/mine.wxml-->
+<view class="header">
+	<text class="btn">点击微信授权</text>
+</view>
+<view class="mydd">
+	<view class="my">我的订单</view>
+	<view class="list">
+		<view class="listItem" bind:tap="goorder">
+			<image class="listimg"  src="../../image/other/personal_comment.png" mode="" />
+			<view>全部订单</view>
+		</view>
+		<view class="listItem">
+			<image class="listimg"  src="../../image/other/personal_receipt.png" mode="" />
+			<view>代发货</view>
+		</view>	
+		<view class="listItem">
+			<image class="listimg"  src="../../image/other/personal_pay.png" mode="" />
+			<view>待收送</view>
+		</view>
+		<view class="listItem">
+			<image class="listimg"  src="../../image/other/personal_comment.png" mode="" />
+			<view>待评价</view>
+		</view>
+	</view>
+</view>
+<view class="address">
+	<view class="item">
+		<image class="itemsimg" src="../../image/other/personal_site.png" mode="" />
+		<text>收获地址</text>
+	</view>
+	<view class="item">
+		<image class="itemsimg" src="../../image/other/personal_evaluated.png" mode="" />
+		<text>我的评价</text>
+	</view>
+	<view class="item">
+		<image class="itemsimg" src="../../image/other/personal_customer.png" mode="" />
+		<text>在线客服</text>
+	</view>
+</view>

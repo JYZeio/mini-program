@@ -1,0 +1,49 @@
+<view>
+<!-- 轮播图 -->
+	<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+		<block wx:for="{{imgList}}" wx:key="*this">
+			<swiper-item>
+				<image class="imgs" src="{{item}}" alt="" />
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+<!-- 酒品分类 -->
+<view class="classify">
+	<block wx:for="{{classify}}" wx:key="url">
+		<view class="classify__item" bindtap="shopdetail" data-id="{{item.id}}">
+			<image class="classif__item__img" src="{{item.url}}" alt="" />
+			<view class="classif__item__text">{{item.text}}</view>
+		</view>
+	</block>
+</view>
+<view class="bar"></view>
+<!-- 商品详细 -->
+<block wx:for="{{shopList}}"  wx:for-item="itemName" wx:key="WineId">
+<view class="handpick">
+	<image class="handpick__img" src="../../image/other/shux.png" mode="" />
+	<view class="handpick__title">
+		<text class="handpick__title__left">{{itemName.wineType}}精选</text>
+		<text class="handpick__title__right" bindtap="goMore" data-wid="{{itemName.WineId}}">更多</text>
+	</view>
+	<image class="handpick__img" src="../../image/other/youjan.png" mode="" />
+</view>
+<view class="guangao">
+	<image class="guangao__img" src="../../image/other/honggg.jpg" mode="" />
+</view>
+<view class="bar"></view>
+<view class="handlist">
+<block wx:for="{{itemName.data}}" wx:for-item="childName" wx:key="*this" >
+	<view class="handlist__item" bindtap="goShopDetails" data-shopid="{{childName.commodity_id}}">
+		<view>
+		<image class="handlist__img" src="{{imgBaseUrl}}{{childName.picture_url}}" mode="" />
+		<text class="handlist__title">{{childName.commodity_name}}</text>
+		</view>
+		<view class="handpick__content">
+			<text class="handpick__content__pri">￥{{childName.commodity_price}}</text>
+			<image class="handpick__content__img" src="../../image/other/jiagou.png" mode="" />
+		</view>
+	</view>
+</block>
+</view>
+</block>

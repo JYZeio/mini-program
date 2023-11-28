@@ -1,0 +1,42 @@
+<!--pages/shopcar/shopcar.wxml-->
+<view class="car" wx:if="{{buylist.length == 0}}">
+	<image class="carimg" src="../../image/other/chartEmpty.png" mode=""/>
+	<button class="btn">去抢购</button>
+</view>
+<view class="box" wx:else>
+  <view class="top">
+    <view class="carlist" wx:for="{{buylist}}" wx:key="*this">
+      <icon type="{{item.checked ? 'success':'circle'}}" bind:tap="changeCheckot" data-sid="{{item.commodity_id}}" />
+      <image class="carlist__imgs" src="{{imgBaseUrl}}{{item.picture_url}}" mode="" />
+      <view class="content">
+        <view class="content__top">
+          <text class="content__top__text">{{item.commodity_name}}</text>
+          <image class="content__top__imgs" src="../../image/other/del.png" mode=""  data-sid="{{item.commodity_id}} " bind:tap="remove"/>
+        </view>
+        <view class="content__bottom">
+          <text class="content__bottom__text">￥{{item.commodity_price}}</text>
+          <view class="jsj">
+            <text class="minus" bind:tap="min" data-sid="{{item.commodity_id}}">-</text>
+            <input class="numnum" type="text" value="{{item.shopnum}}"/>
+            <text class="add" bind:tap="add" data-sid="{{item.commodity_id}}">+</text>
+          </view>
+        </view>
+      </view>
+    </view> 
+  </view>
+</view>
+<view class="jieshuan" wx:if="{{buylist.length > 0 }}">
+    <van-submit-bar
+        price="{{ counts }}"
+        button-text="提交订单"
+        bind:submit="onClickButton"
+      >
+        <van-tag>
+        <view class="quanxuan">
+        <icon type="{{checkout ? 'success':'circle'}}"
+         bind:tap="quanxun"
+        />全选
+        </view>
+        </van-tag>
+      </van-submit-bar>
+</view>

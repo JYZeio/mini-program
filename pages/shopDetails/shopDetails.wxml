@@ -1,0 +1,59 @@
+<!--pages/shopDetails/shopDetails.wxml-->
+<view class="bigbox">
+	<view>
+		<!-- 轮播图 -->
+		<swiper class="swip" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+			<block wx:for="{{shopMage.slideDetail}}" wx:key="url">
+				<swiper-item>
+					<image class="imgs" src="{{imgBaseUrl}}{{item.url}}" mode="" />
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<view class="shop__message">
+		<view class="share">
+			<image class="share__img" src="../../image/other/share.png" mode="" />
+		</view>
+		<view class="shop__pri">
+			<text class="shop__pri__left">价格：￥{{shopMage.commodity_price}}</text>
+			<text class="shop__pri__num">销量：{{shopMage.commodity_sales}}件</text>
+		</view>
+		<view class="shop__bottom">
+			<text class="shop__bottom__left">配送</text>
+			<icon type="success" />
+			<text class="shop__bottom__right">同城配送</text>
+		</view>
+		<view class="bigbox"></view>
+		<view class="shop__phone">
+			<image class="shop__phone__img login" src="../../image/other/shangbiao.png" mode="" />
+			<image class="shop__phone__img weix" src="../../image/other/weix.png" mode="" />
+			<text class="shop__phone__text">雅酌直供</text>
+			<image class="shop__phone__img" src="../../image/other/phone.png" mode="" />
+		</view>
+		<view class="bigbox"></view>
+		<view class="goshop">
+			<text class="goshop__text">进入店铺</text>
+		</view>
+		<view class="bigbox"></view>
+		<view class="imgbtn">
+			<text class="imgbtn__text">图文详细</text>
+			<text class="imgbtn__text">商品评价</text>
+		</view>
+		<view class="bigbox"></view>
+	</view>
+	<view class="shopbigimg">
+		<image src="{{imgBaseUrl}}{{shopMage.picture_url}}" mode="" />
+		<block wx:for="{{shopMage.imgDetail}}" wx:key="id">
+			<image src="{{imgBaseUrl}}{{item.url}}" mode="" />
+		</block>
+	</view>
+</view>
+<view class="bottom">
+<van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="客服" />
+  <van-goods-action-icon icon="cart-o" text="购物车" info="{{amount}}" bind:tap="goshopcar" />
+  <van-goods-action-button color="#be99ff" text="加入购物车" type="warning" bind:tap="addshopcar"  data-shopinfo="{{shopMage}}"/>
+  <van-goods-action-button color="#7232dd" text="立即购买" />
+</van-goods-action>
+</view>
+<van-toast id="van-toast" />

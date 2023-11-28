@@ -1,0 +1,9 @@
+<!--pages/myOrder/myOrder.wxml-->
+<view>订单
+<block wx:for="{{orderList}}" wx:key="commodity_id">
+	<view>名字{{item.commodity_name}}</view>
+	<view>价格{{item.commodity_price}}</view>
+	<view>数量{{item.shopnum}}</view>
+</block>
+	
+</view>
